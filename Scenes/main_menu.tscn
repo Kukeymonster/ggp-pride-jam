@@ -55,11 +55,11 @@ text = "Punk Walkers"
 layout_mode = 2
 theme_override_constants/separation = 15
 
-[node name="TextureButton" type="TextureButton" parent="CenterContainer/MainVboxContainer/ButtonVboxContainer"]
+[node name="PlayButton" type="TextureButton" parent="CenterContainer/MainVboxContainer/ButtonVboxContainer"]
 custom_minimum_size = Vector2(200, 48)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CenterContainer/MainVboxContainer/ButtonVboxContainer/TextureButton"]
+[node name="Label" type="Label" parent="CenterContainer/MainVboxContainer/ButtonVboxContainer/PlayButton"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -78,11 +78,11 @@ text = "Play"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureButton2" type="TextureButton" parent="CenterContainer/MainVboxContainer/ButtonVboxContainer"]
+[node name="OptionsButton" type="TextureButton" parent="CenterContainer/MainVboxContainer/ButtonVboxContainer"]
 custom_minimum_size = Vector2(200, 48)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CenterContainer/MainVboxContainer/ButtonVboxContainer/TextureButton2"]
+[node name="Label" type="Label" parent="CenterContainer/MainVboxContainer/ButtonVboxContainer/OptionsButton"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -101,11 +101,11 @@ text = "Options"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureButton3" type="TextureButton" parent="CenterContainer/MainVboxContainer/ButtonVboxContainer"]
+[node name="CreditsButton" type="TextureButton" parent="CenterContainer/MainVboxContainer/ButtonVboxContainer"]
 custom_minimum_size = Vector2(200, 48)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CenterContainer/MainVboxContainer/ButtonVboxContainer/TextureButton3"]
+[node name="Label" type="Label" parent="CenterContainer/MainVboxContainer/ButtonVboxContainer/CreditsButton"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -124,11 +124,11 @@ text = "Credits"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureButton4" type="TextureButton" parent="CenterContainer/MainVboxContainer/ButtonVboxContainer"]
+[node name="ExitButton" type="TextureButton" parent="CenterContainer/MainVboxContainer/ButtonVboxContainer"]
 custom_minimum_size = Vector2(200, 48)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CenterContainer/MainVboxContainer/ButtonVboxContainer/TextureButton4"]
+[node name="Label" type="Label" parent="CenterContainer/MainVboxContainer/ButtonVboxContainer/ExitButton"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -146,3 +146,8 @@ theme_override_font_sizes/font_size = 30
 text = "Exit"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[connection signal="pressed" from="CenterContainer/MainVboxContainer/ButtonVboxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="CenterContainer/MainVboxContainer/ButtonVboxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="CenterContainer/MainVboxContainer/ButtonVboxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="CenterContainer/MainVboxContainer/ButtonVboxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

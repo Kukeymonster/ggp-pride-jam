@@ -1,0 +1,73 @@
+[gd_scene load_steps=6 format=3 uid="uid://br2w53kkeq5u4"]
+
+[ext_resource type="Script" uid="uid://ba8rdqaavpedq" path="res://Scripts/options_menu.gd" id="1_6s6dx"]
+[ext_resource type="FontFile" uid="uid://c227q2oddmykq" path="res://Art/Font/Orbitron/Orbitron-VariableFont_wght.ttf" id="2_2r67u"]
+
+[sub_resource type="Gradient" id="Gradient_qm77j"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.133196, 0.133196, 0.133196, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_3x0l0"]
+gradient = SubResource("Gradient_qm77j")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6s6dx"]
+texture = SubResource("GradientTexture1D_3x0l0")
+
+[node name="OptionsUI" type="Control"]
+z_index = 10
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6s6dx")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_6s6dx")
+
+[node name="FlowContainer" type="FlowContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ReturnButton" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -72.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="ReturnButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -26.5
+offset_top = -11.5
+offset_right = 26.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_2r67u")
+theme_override_font_sizes/font_size = 30
+text = "Return"
+
+[connection signal="pressed" from="ReturnButton" to="." method="_on_return_button_pressed"]
