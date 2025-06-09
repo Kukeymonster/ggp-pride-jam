@@ -5,8 +5,10 @@ var UserDataLocation: String = "user://%s/user_prefs.tres" % ProjectSettings.get
 
 #options menu
 var Mastervolume: float
+var Gamevolume: float
 var Musicvolume: float
 var SFXvolume: float
+var Voicevolume: float
 
 const windowModeArray: Array[String] = [
 	"Full-Screen",

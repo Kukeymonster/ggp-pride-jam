@@ -1,10 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://bn0pu4m285nh8"]
+[gd_scene load_steps=6 format=3 uid="uid://bn0pu4m285nh8"]
 
 [ext_resource type="Script" uid="uid://bi3rkvni5lkh0" path="res://Scripts/main_menu.gd" id="1_28flt"]
 [ext_resource type="FontFile" uid="uid://cr5k5jdmvsy80" path="res://Art/Font/New_Rocker/NewRocker-Regular.ttf" id="2_1ehe0"]
 [ext_resource type="FontFile" uid="uid://c227q2oddmykq" path="res://Art/Font/Orbitron/Orbitron-VariableFont_wght.ttf" id="3_ce3w2"]
 
-[node name="Main Menu" type="Control"]
+[sub_resource type="Gradient" id="Gradient_1ehe0"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ce3w2"]
+gradient = SubResource("Gradient_1ehe0")
+
+[node name="Main Menu" type="Control" node_paths=PackedStringArray("FadeInPanel")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,6 +19,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_28flt")
+FadeInPanel = NodePath("Panel")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -146,6 +154,16 @@ theme_override_font_sizes/font_size = 30
 text = "Exit"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Panel" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_ce3w2")
 
 [connection signal="pressed" from="CenterContainer/MainVboxContainer/ButtonVboxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="CenterContainer/MainVboxContainer/ButtonVboxContainer/OptionsButton" to="." method="_on_options_button_pressed"]

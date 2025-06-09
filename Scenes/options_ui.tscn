@@ -37,8 +37,175 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = 30.0
+offset_right = -30.0
+offset_bottom = -30.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="FlowContainer"]
+layout_mode = 2
+
+[node name="WindowModeContainer" type="VBoxContainer" parent="FlowContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="FlowContainer/VBoxContainer/WindowModeContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="FlowContainer/VBoxContainer/WindowModeContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_2r67u")
+theme_override_font_sizes/font_size = 20
+text = "Window Mode: "
+
+[node name="OptionButton" type="OptionButton" parent="FlowContainer/VBoxContainer/WindowModeContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="ResolutionContainer" type="VBoxContainer" parent="FlowContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="FlowContainer/VBoxContainer/ResolutionContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="FlowContainer/VBoxContainer/ResolutionContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_2r67u")
+theme_override_font_sizes/font_size = 20
+text = "Resolution: "
+
+[node name="OptionButton" type="OptionButton" parent="FlowContainer/VBoxContainer/ResolutionContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Spacer" type="Control" parent="FlowContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="MasterVolumeContainer" type="VBoxContainer" parent="FlowContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="FlowContainer/VBoxContainer/MasterVolumeContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_2r67u")
+theme_override_font_sizes/font_size = 20
+text = "Master"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="FlowContainer/VBoxContainer/MasterVolumeContainer"]
+layout_mode = 2
+
+[node name="HSlider" type="HSlider" parent="FlowContainer/VBoxContainer/MasterVolumeContainer/HBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="LineEdit" type="LineEdit" parent="FlowContainer/VBoxContainer/MasterVolumeContainer/HBoxContainer"]
+layout_mode = 2
+text = "100"
+
+[node name="GameVolumeContainer" type="VBoxContainer" parent="FlowContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="FlowContainer/VBoxContainer/GameVolumeContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_2r67u")
+theme_override_font_sizes/font_size = 20
+text = "Game"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="FlowContainer/VBoxContainer/GameVolumeContainer"]
+layout_mode = 2
+
+[node name="HSlider" type="HSlider" parent="FlowContainer/VBoxContainer/GameVolumeContainer/HBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="LineEdit" type="LineEdit" parent="FlowContainer/VBoxContainer/GameVolumeContainer/HBoxContainer"]
+layout_mode = 2
+text = "100"
+
+[node name="SFXVolumeContainer" type="VBoxContainer" parent="FlowContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="FlowContainer/VBoxContainer/SFXVolumeContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_2r67u")
+theme_override_font_sizes/font_size = 20
+text = "SFX"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="FlowContainer/VBoxContainer/SFXVolumeContainer"]
+layout_mode = 2
+
+[node name="HSlider" type="HSlider" parent="FlowContainer/VBoxContainer/SFXVolumeContainer/HBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="LineEdit" type="LineEdit" parent="FlowContainer/VBoxContainer/SFXVolumeContainer/HBoxContainer"]
+layout_mode = 2
+text = "100"
+
+[node name="VoiceVolumeContainer" type="VBoxContainer" parent="FlowContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="FlowContainer/VBoxContainer/VoiceVolumeContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_2r67u")
+theme_override_font_sizes/font_size = 20
+text = "Voice"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="FlowContainer/VBoxContainer/VoiceVolumeContainer"]
+layout_mode = 2
+
+[node name="HSlider" type="HSlider" parent="FlowContainer/VBoxContainer/VoiceVolumeContainer/HBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="LineEdit" type="LineEdit" parent="FlowContainer/VBoxContainer/VoiceVolumeContainer/HBoxContainer"]
+layout_mode = 2
+text = "100"
+
+[node name="MusicVolumeContainer" type="VBoxContainer" parent="FlowContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="FlowContainer/VBoxContainer/MusicVolumeContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_2r67u")
+theme_override_font_sizes/font_size = 20
+text = "Music"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="FlowContainer/VBoxContainer/MusicVolumeContainer"]
+layout_mode = 2
+
+[node name="HSlider" type="HSlider" parent="FlowContainer/VBoxContainer/MusicVolumeContainer/HBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="LineEdit" type="LineEdit" parent="FlowContainer/VBoxContainer/MusicVolumeContainer/HBoxContainer"]
+layout_mode = 2
+text = "100"
+virtual_keyboard_type = 2
 
 [node name="ReturnButton" type="TextureButton" parent="."]
 custom_minimum_size = Vector2(300, 100)
@@ -70,4 +237,15 @@ theme_override_fonts/font = ExtResource("2_2r67u")
 theme_override_font_sizes/font_size = 30
 text = "Return"
 
+[connection signal="item_selected" from="FlowContainer/VBoxContainer/WindowModeContainer/HBoxContainer/OptionButton" to="." method="_on_WindowMode_option_button_item_selected"]
+[connection signal="value_changed" from="FlowContainer/VBoxContainer/MasterVolumeContainer/HBoxContainer/HSlider" to="." method="_on_Master_slider_value_changed"]
+[connection signal="text_changed" from="FlowContainer/VBoxContainer/MasterVolumeContainer/HBoxContainer/LineEdit" to="." method="_on_Master_line_edit_text_changed"]
+[connection signal="value_changed" from="FlowContainer/VBoxContainer/GameVolumeContainer/HBoxContainer/HSlider" to="." method="_on_Game_slider_value_changed"]
+[connection signal="text_changed" from="FlowContainer/VBoxContainer/GameVolumeContainer/HBoxContainer/LineEdit" to="." method="_on_Game_line_edit_text_changed"]
+[connection signal="value_changed" from="FlowContainer/VBoxContainer/SFXVolumeContainer/HBoxContainer/HSlider" to="." method="_on_Sfx_slider_value_changed"]
+[connection signal="text_changed" from="FlowContainer/VBoxContainer/SFXVolumeContainer/HBoxContainer/LineEdit" to="." method="_on_Sfx_line_edit_text_changed"]
+[connection signal="value_changed" from="FlowContainer/VBoxContainer/VoiceVolumeContainer/HBoxContainer/HSlider" to="." method="_on_Voice_slider_value_changed"]
+[connection signal="text_changed" from="FlowContainer/VBoxContainer/VoiceVolumeContainer/HBoxContainer/LineEdit" to="." method="_on_Voice_line_edit_text_changed"]
+[connection signal="value_changed" from="FlowContainer/VBoxContainer/MusicVolumeContainer/HBoxContainer/HSlider" to="." method="_on_Music_slider_value_changed"]
+[connection signal="text_changed" from="FlowContainer/VBoxContainer/MusicVolumeContainer/HBoxContainer/LineEdit" to="." method="_on_Music_line_edit_text_changed"]
 [connection signal="pressed" from="ReturnButton" to="." method="_on_return_button_pressed"]

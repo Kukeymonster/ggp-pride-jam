@@ -2,8 +2,11 @@ extends Resource
 class_name UserPreferences
 
 @export_range(0,1,0.05) var masterAudioLevel: float = 1.0
+@export_range(0,1,0.05) var gameAudioLevel: float = 1.0
 @export_range(0,1,0.05) var musicAudioLevel: float = 1.0
 @export_range(0,1,0.05) var sfxAudioLevel: float = 1.0
+@export_range(0,1,0.05) var voiceAudioLevel: float = 1.0
+
 @export var windowModeIndex: int = 0
 @export var resolutionIndex: int = 10
 
