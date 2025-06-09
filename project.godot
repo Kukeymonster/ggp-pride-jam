@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="GGP Pride Jam"
+config/name="Punk Walkers"
 run/main_scene="uid://lytmsp31y8cj"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
