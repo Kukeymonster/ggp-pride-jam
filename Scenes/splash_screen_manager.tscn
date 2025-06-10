@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://yutilkyvuw6j" path="res://Art/PNG_Godot Font 1 Gear Cloud.png" id="1_cwdsd"]
 [ext_resource type="Script" uid="uid://tltdit2rpmy1" path="res://Scripts/splash_screen_manager.gd" id="1_lgypn"]
-[ext_resource type="Texture2D" uid="uid://wd0hdgudvnqw" path="res://icon.svg" id="4_4dmie"]
+[ext_resource type="Texture2D" uid="uid://cirs554pqq436" path="res://Art/FabFourLogo.png" id="2_8rc07"]
 
 [node name="SplashScreenManager" type="Control" node_paths=PackedStringArray("Team_Logo", "Godot_Logo")]
 layout_mode = 3
@@ -26,9 +26,15 @@ color = Color(0, 0, 0, 1)
 
 [node name="Team_Logo_Container" type="CenterContainer" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.0
+offset_top = -128.0
+offset_right = 192.0
+offset_bottom = 128.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -37,23 +43,7 @@ layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="Team_Logo_Container/VBoxContainer"]
 layout_mode = 2
-texture = ExtResource("4_4dmie")
-
-[node name="Label" type="Label" parent="Team_Logo_Container/VBoxContainer/TextureRect"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -55.0
-offset_top = -23.0
-offset_right = 55.0
-grow_horizontal = 2
-grow_vertical = 0
-text = "Fabulous Four"
-horizontal_alignment = 1
-vertical_alignment = 1
+texture = ExtResource("2_8rc07")
 
 [node name="Godot_Logo_Container" type="CenterContainer" parent="."]
 layout_mode = 1
