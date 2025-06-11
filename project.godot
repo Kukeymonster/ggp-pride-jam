@@ -23,6 +23,10 @@ buses/default_bus_layout="uid://crbshudt0p8fh"
 
 GlobalVars="*res://Scripts/Utility/GlobalVars.gd"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [dotnet]
 
 project/assembly_name="GGP Pride Jam"

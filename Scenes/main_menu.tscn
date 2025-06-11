@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bn0pu4m285nh8"]
+[gd_scene load_steps=7 format=3 uid="uid://bn0pu4m285nh8"]
 
 [ext_resource type="Script" uid="uid://bi3rkvni5lkh0" path="res://Scripts/main_menu.gd" id="1_28flt"]
 [ext_resource type="FontFile" uid="uid://cr5k5jdmvsy80" path="res://Art/Font/New_Rocker/NewRocker-Regular.ttf" id="2_1ehe0"]
+[ext_resource type="Texture2D" uid="uid://dsb8ng1k7ub8o" path="res://Art/PunkrockMainMenuBackground.jpg" id="2_ce3w2"]
 [ext_resource type="FontFile" uid="uid://c227q2oddmykq" path="res://Art/Font/Orbitron/Orbitron-VariableFont_wght.ttf" id="3_ce3w2"]
 
 [sub_resource type="Gradient" id="Gradient_1ehe0"]
@@ -21,14 +22,20 @@ grow_vertical = 2
 script = ExtResource("1_28flt")
 FadeInPanel = NodePath("Panel")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -6932.0
+offset_top = -4333.0
+offset_right = 808.0
+offset_bottom = 667.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.631373)
+texture = ExtResource("2_ce3w2")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
@@ -55,6 +62,8 @@ offset_left = -53.0
 offset_right = 53.0
 offset_bottom = 23.0
 grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("2_1ehe0")
 theme_override_font_sizes/font_size = 72
 text = "Punk Walkers"
@@ -80,6 +89,8 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("3_ce3w2")
 theme_override_font_sizes/font_size = 30
 text = "Play"
@@ -103,6 +114,8 @@ offset_right = 31.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("3_ce3w2")
 theme_override_font_sizes/font_size = 30
 text = "Options"
@@ -126,6 +139,8 @@ offset_right = 27.5
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("3_ce3w2")
 theme_override_font_sizes/font_size = 30
 text = "Credits"
@@ -149,6 +164,8 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("3_ce3w2")
 theme_override_font_sizes/font_size = 30
 text = "Exit"
