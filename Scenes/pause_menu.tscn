@@ -1,8 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://reg1rho6mvww"]
+[gd_scene load_steps=6 format=3 uid="uid://reg1rho6mvww"]
 
 [ext_resource type="Script" uid="uid://ikbgnryq7hp2" path="res://Scripts/pause_menu.gd" id="1_k0w1u"]
 [ext_resource type="FontFile" uid="uid://cr5k5jdmvsy80" path="res://Art/Font/New_Rocker/NewRocker-Regular.ttf" id="2_bpi0q"]
 [ext_resource type="Texture2D" uid="uid://dsb8ng1k7ub8o" path="res://Art/PunkrockMainMenuBackground.jpg" id="2_vmyb1"]
+[ext_resource type="Shader" uid="uid://pphwfgs4luno" path="res://Art/Font/New_Rocker/s_punk_rocker.gdshader" id="3_myy0f"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sjs17"]
+shader = ExtResource("3_myy0f")
+shader_parameter/outline_size_px = 0.0
+shader_parameter/gradient_offset = 0.0
+shader_parameter/gradient_blend_sharpness = 30.0
 
 [node name="PauseMenu" type="Control"]
 layout_mode = 3
@@ -45,6 +52,7 @@ custom_minimum_size = Vector2(0, 145.53)
 layout_mode = 2
 
 [node name="Label" type="Label" parent="CenterContainer/MainVboxContainer/Control"]
+material = SubResource("ShaderMaterial_sjs17")
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -53,8 +61,6 @@ offset_left = -53.0
 offset_right = 53.0
 offset_bottom = 23.0
 grow_horizontal = 2
-theme_override_colors/font_color = Color(1, 0.2, 0.6, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("2_bpi0q")
 theme_override_font_sizes/font_size = 72
@@ -69,6 +75,7 @@ custom_minimum_size = Vector2(200, 48)
 layout_mode = 2
 
 [node name="Label" type="Label" parent="CenterContainer/MainVboxContainer/ButtonVboxContainer/PlayButton"]
+material = SubResource("ShaderMaterial_sjs17")
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -81,11 +88,9 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(1, 0.2, 0.6, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("2_bpi0q")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 56
 text = "Return to Game"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -95,6 +100,7 @@ custom_minimum_size = Vector2(200, 48)
 layout_mode = 2
 
 [node name="Label" type="Label" parent="CenterContainer/MainVboxContainer/ButtonVboxContainer/OptionsButton"]
+material = SubResource("ShaderMaterial_sjs17")
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -107,11 +113,9 @@ offset_right = 31.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(1, 0.2, 0.6, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("2_bpi0q")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 56
 text = "Options"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -121,6 +125,7 @@ custom_minimum_size = Vector2(200, 48)
 layout_mode = 2
 
 [node name="Label" type="Label" parent="CenterContainer/MainVboxContainer/ButtonVboxContainer/CreditsButton"]
+material = SubResource("ShaderMaterial_sjs17")
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -133,11 +138,9 @@ offset_right = 27.5
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(1, 0.2, 0.6, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("2_bpi0q")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 56
 text = "Credits"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -147,6 +150,7 @@ custom_minimum_size = Vector2(200, 48)
 layout_mode = 2
 
 [node name="Label" type="Label" parent="CenterContainer/MainVboxContainer/ButtonVboxContainer/ExitButton"]
+material = SubResource("ShaderMaterial_sjs17")
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -159,11 +163,9 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(1, 0.2, 0.6, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("2_bpi0q")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 56
 text = "Exit"
 horizontal_alignment = 1
 vertical_alignment = 1
