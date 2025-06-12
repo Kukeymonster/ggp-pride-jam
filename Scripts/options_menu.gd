@@ -1,5 +1,7 @@
 extends Control
 
+signal closed
+
 var userPref: UserPreferences
 
 @onready var MasterVolumeSlider  = $FlowContainer/VBoxContainer/MasterVolumeContainer/HBoxContainer/HSlider
@@ -30,20 +32,30 @@ func _ready():
 
 	add_resolution_selected()
 	
-	MasterVolumeSlider.value_changed.connect(_on_Master_slider_value_changed)
-	MasterLineEdit.text_changed.connect(_on_Master_line_edit_text_changed)
-	
-	GameVolumeSlider.value_changed.connect(_on_Game_slider_value_changed)
-	GameLineEdit.text_changed.connect(_on_Game_line_edit_text_changed)
-	
-	SfxVolumeSlider.value_changed.connect(_on_Sfx_slider_value_changed)
-	SfxLineEdit.text_changed.connect(_on_Sfx_line_edit_text_changed)
-	
-	VoiceVolumeSlider.value_changed.connect(_on_Voice_slider_value_changed)
-	VoiceLineEdit.text_changed.connect(_on_Voice_line_edit_text_changed)
-	
-	MusicVolumeSlider.value_changed.connect(_on_Music_slider_value_changed)
-	MusicLineEdit.text_changed.connect(_on_Music_line_edit_text_changed)
+	if not MasterVolumeSlider.value_changed.is_connected(_on_Master_slider_value_changed):
+		MasterVolumeSlider.value_changed.connect(_on_Master_slider_value_changed)
+	if not MasterLineEdit.text_changed.is_connected(_on_Master_line_edit_text_changed):
+		MasterLineEdit.text_changed.connect(_on_Master_line_edit_text_changed)
+
+	if not GameVolumeSlider.value_changed.is_connected(_on_Game_slider_value_changed):
+		GameVolumeSlider.value_changed.connect(_on_Game_slider_value_changed)
+	if not GameLineEdit.text_changed.is_connected(_on_Game_line_edit_text_changed):
+		GameLineEdit.text_changed.connect(_on_Game_line_edit_text_changed)
+
+	if not SfxVolumeSlider.value_changed.is_connected(_on_Sfx_slider_value_changed):
+		SfxVolumeSlider.value_changed.connect(_on_Sfx_slider_value_changed)
+	if not SfxLineEdit.text_changed.is_connected(_on_Sfx_line_edit_text_changed):
+		SfxLineEdit.text_changed.connect(_on_Sfx_line_edit_text_changed)
+
+	if not VoiceVolumeSlider.value_changed.is_connected(_on_Voice_slider_value_changed):
+		VoiceVolumeSlider.value_changed.connect(_on_Voice_slider_value_changed)
+	if not VoiceLineEdit.text_changed.is_connected(_on_Voice_line_edit_text_changed):
+		VoiceLineEdit.text_changed.connect(_on_Voice_line_edit_text_changed)
+
+	if not MusicVolumeSlider.value_changed.is_connected(_on_Music_slider_value_changed):
+		MusicVolumeSlider.value_changed.connect(_on_Music_slider_value_changed)
+	if not MusicLineEdit.text_changed.is_connected(_on_Music_line_edit_text_changed):
+		MusicLineEdit.text_changed.connect(_on_Music_line_edit_text_changed)
 	
 	windowModeButton.select(userPref.windowModeIndex)
 	resolutionsButton.select(userPref.resolutionIndex)
@@ -66,6 +78,7 @@ func _update_ui_from_prefs():
 
 func _on_return_button_pressed():
 	userPref.save()
+	closed.emit()
 	queue_free()
 
 
