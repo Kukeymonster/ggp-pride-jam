@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://lf4d78yjs6uw"]
+[gd_scene load_steps=40 format=3 uid="uid://lf4d78yjs6uw"]
 
 [ext_resource type="Texture2D" uid="uid://dmtrrjrr2buke" path="res://Art/TEXTURES/dirt1.png" id="1_46yxy"]
 [ext_resource type="Texture2D" uid="uid://bh78doav21rai" path="res://Art/TEXTURES/fence1_a.png" id="2_5xglg"]
@@ -8,6 +8,9 @@
 [ext_resource type="Script" uid="uid://k17q7qw1d3u3" path="res://Scripts/Audio/voiceover_trigger_area.gd" id="5_pyuds"]
 [ext_resource type="PackedScene" uid="uid://wcnlpclb8po7" path="res://Scenes/Character/Player.tscn" id="6_pyuds"]
 [ext_resource type="AudioStream" uid="uid://c1okglu7lv5q5" path="res://Sound/Triple-Q_The_Only_Japanese_Goblin_I_Know_For_Real.mp3" id="6_y0vb5"]
+[ext_resource type="Texture2D" uid="uid://dryl5vjwhicds" path="res://Art/POSTER.png" id="7_7re1q"]
+[ext_resource type="Texture2D" uid="uid://b1liv8ue7jkgk" path="res://Art/BOOTS.png" id="8_lboh2"]
+[ext_resource type="Texture2D" uid="uid://bsns52sc1ae7o" path="res://Art/MOHAWK.png" id="9_t2sxf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cw650"]
 albedo_color = Color(0.568973, 0.568973, 0.568973, 1)
@@ -653,6 +656,19 @@ unit_size = 2.0
 max_distance = 3.9
 bus = &"Voice"
 
+[node name="Pedastal" type="Node3D" parent="FirstExhibition"]
+
+[node name="CSGBox3D46" type="CSGBox3D" parent="FirstExhibition/Pedastal"]
+transform = Transform3D(-9.99921, 0, -0.125484, 0, 1, 0, 0.125484, 0, -9.99921, 0.0979764, 0.206191, 0.187463)
+material_override = SubResource("StandardMaterial3D_riig2")
+use_collision = true
+size = Vector3(0.0588037, 0.422089, 0.0532227)
+
+[node name="Sprite3D" type="Sprite3D" parent="FirstExhibition/Pedastal"]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0.109864, 1.01778, 0.185107)
+billboard = 1
+texture = ExtResource("7_7re1q")
+
 [node name="SecondExhibiton" type="Node3D" parent="."]
 transform = Transform3D(-0.0261421, 0, 0.999658, 0, 1, 0, -0.999658, 0, -0.0261421, -2.57152, 0, 4.52366)
 
@@ -707,6 +723,19 @@ unit_size = 2.0
 max_distance = 3.9
 bus = &"Voice"
 
+[node name="Pedastal" type="Node3D" parent="SecondExhibiton"]
+
+[node name="CSGBox3D46" type="CSGBox3D" parent="SecondExhibiton/Pedastal"]
+transform = Transform3D(-9.99921, 0, -0.125484, 0, 1, 0, 0.125484, 0, -9.99921, 0.0979764, 0.206191, 0.187463)
+material_override = SubResource("StandardMaterial3D_riig2")
+use_collision = true
+size = Vector3(0.0588037, 0.422089, 0.0532227)
+
+[node name="Sprite3D" type="Sprite3D" parent="SecondExhibiton/Pedastal"]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0.109864, 1.01778, 0.185107)
+billboard = 1
+texture = ExtResource("8_lboh2")
+
 [node name="ThirdExhibition" type="Node3D" parent="."]
 transform = Transform3D(0.900501, 0, 0.434854, 0, 1, 0, -0.434854, 0, 0.900501, 6.35989, 0, -2.88866)
 
@@ -760,6 +789,19 @@ attenuation_model = 1
 unit_size = 2.0
 max_distance = 3.9
 bus = &"Voice"
+
+[node name="Pedastal" type="Node3D" parent="ThirdExhibition"]
+
+[node name="CSGBox3D46" type="CSGBox3D" parent="ThirdExhibition/Pedastal"]
+transform = Transform3D(-9.99921, 0, -0.125484, 0, 1, 0, 0.125484, 0, -9.99921, 0.0979764, 0.206191, 0.187463)
+material_override = SubResource("StandardMaterial3D_riig2")
+use_collision = true
+size = Vector3(0.0588037, 0.422089, 0.0532227)
+
+[node name="Sprite3D" type="Sprite3D" parent="ThirdExhibition/Pedastal"]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0.109864, 1.01778, 0.185107)
+billboard = 1
+texture = ExtResource("9_t2sxf")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(0.743712, -0.595377, 0.304004, 0.261745, 0.677791, 0.687087, -0.615127, -0.431424, 0.659918, 6.88494, 7.474, 14.459)
