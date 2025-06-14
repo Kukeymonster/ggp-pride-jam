@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://lf4d78yjs6uw"]
+[gd_scene load_steps=49 format=3 uid="uid://lf4d78yjs6uw"]
 
 [ext_resource type="Texture2D" uid="uid://dmtrrjrr2buke" path="res://Art/TEXTURES/dirt1.png" id="1_46yxy"]
 [ext_resource type="Texture2D" uid="uid://bh78doav21rai" path="res://Art/TEXTURES/fence1_a.png" id="2_5xglg"]
@@ -16,6 +16,7 @@
 [ext_resource type="AudioStream" uid="uid://drg03hht66das" path="res://Sound/SFX/760371__froey__stepping_madly-CUT.wav" id="12_jkatx"]
 [ext_resource type="AudioStream" uid="uid://d3y3dfa4yg7sf" path="res://Sound/PRock.mp3" id="15_do5u0"]
 [ext_resource type="AudioStream" uid="uid://ceo7tonukn382" path="res://Sound/Voiceover/VoiceLine_End-1.wav" id="15_riig2"]
+[ext_resource type="Script" uid="uid://bw1jipam58nvr" path="res://Scripts/Audio/final_voiceover_trigger_area.gd" id="17_do5u0"]
 [ext_resource type="AudioStream" uid="uid://c2ox5ee7styos" path="res://Sound/Voiceover/VoiceLine_End-2.wav" id="17_wv7ba"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cw650"]
@@ -1069,8 +1070,9 @@ bus = &"Voice"
 [node name="Node3D" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5971, 0.290288, 0.133931)
 
-[node name="Final_VoiceoverTriggerArea" type="Area3D" parent="Node3D" node_paths=PackedStringArray("audio_stream_player")]
-script = ExtResource("5_pyuds")
+[node name="Final_VoiceoverTriggerArea" type="Area3D" parent="Node3D" node_paths=PackedStringArray("myPlayer", "audio_stream_player")]
+script = ExtResource("17_do5u0")
+myPlayer = NodePath("../../Player")
 voiceover_audio = ExtResource("17_wv7ba")
 audio_stream_player = NodePath("../Final_VoiceoverPlayback")
 
@@ -1089,4 +1091,5 @@ bus = &"Voice"
 [connection signal="body_entered" from="SecondExhibiton/Audio_Shenanigans/Ex2_VoiceoverTriggerArea" to="SecondExhibiton/Audio_Shenanigans/Ex2_VoiceoverTriggerArea" method="_on_body_entered"]
 [connection signal="body_entered" from="ThirdExhibition/Audio_Shenanigans/Ex3_VoiceoverTriggerArea" to="ThirdExhibition/Audio_Shenanigans/Ex3_VoiceoverTriggerArea" method="_on_body_entered"]
 [connection signal="body_entered" from="End_VoiceoverTriggerArea" to="End_VoiceoverTriggerArea" method="_on_body_entered"]
-[connection signal="body_entered" from="Node3D/Final_VoiceoverTriggerArea" to="Node3D/Final_VoiceoverTriggerArea" method="_on_body_entered"]
+[connection signal="body_entered" from="Node3D/Final_VoiceoverTriggerArea" to="Node3D/Final_VoiceoverTriggerArea" method="_on_final_body_entered"]
+[connection signal="finished" from="Node3D/Final_VoiceoverPlayback" to="Node3D/Final_VoiceoverTriggerArea" method="_on_final_voiceover_playback_finished"]
