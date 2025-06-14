@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://lf4d78yjs6uw"]
+[gd_scene load_steps=43 format=3 uid="uid://lf4d78yjs6uw"]
 
 [ext_resource type="Texture2D" uid="uid://dmtrrjrr2buke" path="res://Art/TEXTURES/dirt1.png" id="1_46yxy"]
 [ext_resource type="Texture2D" uid="uid://bh78doav21rai" path="res://Art/TEXTURES/fence1_a.png" id="2_5xglg"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dryl5vjwhicds" path="res://Art/POSTER.png" id="7_7re1q"]
 [ext_resource type="Texture2D" uid="uid://b1liv8ue7jkgk" path="res://Art/BOOTS.png" id="8_lboh2"]
 [ext_resource type="Texture2D" uid="uid://bsns52sc1ae7o" path="res://Art/MOHAWK.png" id="9_t2sxf"]
+[ext_resource type="AudioStream" uid="uid://drg03hht66das" path="res://Sound/760371__froey__stepping_madly-CUT.wav" id="12_jkatx"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cw650"]
 albedo_color = Color(0.568973, 0.568973, 0.568973, 1)
@@ -105,10 +106,17 @@ albedo_texture = ExtResource("2_46yxy")
 transparency = 1
 albedo_color = Color(1, 1, 1, 0)
 
+[sub_resource type="Sky" id="Sky_t2sxf"]
+
+[sub_resource type="Environment" id="Environment_t2sxf"]
+background_mode = 2
+sky = SubResource("Sky_t2sxf")
+
 [node name="Node3D" type="Node3D"]
 
 [node name="SUN" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.99951, 0.00131023, -0.0312612, -0.0116789, 0.911289, 0.411602, 0.0290273, 0.411766, -0.910827, 0, 12.4928, -0.0997951)
+transform = Transform3D(-0.148945, 0.90282, 0.4034, -0.549476, -0.414736, 0.725308, 0.822126, -0.113627, 0.55785, 0, 12.4928, -0.0997951)
+light_energy = 0.01
 shadow_enabled = true
 
 [node name="Ground" type="CSGBox3D" parent="."]
@@ -1009,6 +1017,14 @@ transform = Transform3D(-0.16998, 0, -0.00259606, 0, 0.17, 0, 0.00259606, 0, -0.
 
 [node name="Player" parent="." instance=ExtResource("6_pyuds")]
 transform = Transform3D(-2.62268e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.62268e-08, -11.8492, 0.611813, 2.49428)
+step_sound_distance_interval = 0.2
+pitch_variance = 0.1
+step_SFX = ExtResource("12_jkatx")
+
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="Player"]
+stream = ExtResource("12_jkatx")
+max_polyphony = 2
+bus = &"SFX"
 
 [node name="MusicStreamPlayer" type="AudioStreamPlayer" parent="."]
 bus = &"Music"
@@ -1018,6 +1034,9 @@ transform = Transform3D(-2.62268e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.62268e-08, 
 material_override = SubResource("StandardMaterial3D_uhqrl")
 use_collision = true
 size = Vector3(6.29785, 3.45752, 1)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_t2sxf")
 
 [connection signal="body_entered" from="FirstExhibition/Audio_Shenanigans/Ex1_VoiceoverTriggerArea" to="FirstExhibition/Audio_Shenanigans/Ex1_VoiceoverTriggerArea" method="_on_body_entered"]
 [connection signal="body_entered" from="SecondExhibiton/Audio_Shenanigans/Ex2_VoiceoverTriggerArea" to="SecondExhibiton/Audio_Shenanigans/Ex2_VoiceoverTriggerArea" method="_on_body_entered"]
