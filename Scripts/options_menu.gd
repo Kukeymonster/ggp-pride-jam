@@ -65,16 +65,16 @@ func _update_ui_from_prefs():
 	MasterLineEdit.text = "%.0f%%" % (userPref.masterAudioLevel * 100)
 
 	GameVolumeSlider.value = userPref.gameAudioLevel
-	GameLineEdit.text = "%.0f%%" % (userPref.masterAudioLevel * 100)
+	GameLineEdit.text = "%.0f%%" % (userPref.gameAudioLevel * 100)
 
 	SfxVolumeSlider.value = userPref.sfxAudioLevel
-	SfxLineEdit.text = "%.0f%%" % (userPref.masterAudioLevel * 100)
+	SfxLineEdit.text = "%.0f%%" % (userPref.sfxAudioLevel * 100)
 
 	VoiceVolumeSlider.value = userPref.voiceAudioLevel
-	VoiceLineEdit.text = "%.0f%%" % (userPref.masterAudioLevel * 100)
+	VoiceLineEdit.text = "%.0f%%" % (userPref.voiceAudioLevel * 100)
 
 	MusicVolumeSlider.value = userPref.musicAudioLevel
-	MusicLineEdit.text = "%.0f%%" % (userPref.masterAudioLevel * 100)
+	MusicLineEdit.text = "%.0f%%" % (userPref.musicAudioLevel * 100)
 
 func _on_return_button_pressed():
 	userPref.save()
@@ -163,6 +163,7 @@ func _on_Music_line_edit_text_changed(new_text):
 func _update_audio_bus(bus_name: String, volume: float):
 	var db_volume = linear_to_db(volume)
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index(bus_name), db_volume)
+	print(bus_name, " volume set to: ", db_volume)
 
 func linear_to_db(linear: float) -> float:
 	if linear == 0:

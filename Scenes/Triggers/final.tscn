@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://chf4nl64sc1n2"]
+
+[ext_resource type="Script" uid="uid://bw1jipam58nvr" path="res://Scripts/Audio/final_voiceover_trigger_area.gd" id="1_8nxsx"]
+[ext_resource type="AudioStream" uid="uid://c2ox5ee7styos" path="res://Sound/Voiceover/VoiceLine_End-2.wav" id="2_o6y53"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dcs6k"]
+
+[node name="Final" type="Node3D"]
+
+[node name="Final_VoiceoverTriggerArea" type="Area3D" parent="." node_paths=PackedStringArray("audio_stream_player")]
+script = ExtResource("1_8nxsx")
+voiceover_audio = ExtResource("2_o6y53")
+audio_stream_player = NodePath("../Final_VoiceoverPlayback")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Final_VoiceoverTriggerArea"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0.193)
+shape = SubResource("BoxShape3D_dcs6k")
+
+[node name="Final_VoiceoverPlayback" type="AudioStreamPlayer3D" parent="."]
+attenuation_model = 1
+unit_size = 2.0
+max_distance = 3.9
+bus = &"Voice"
+
+[connection signal="body_entered" from="Final_VoiceoverTriggerArea" to="Final_VoiceoverTriggerArea" method="_on_final_body_entered"]
+[connection signal="finished" from="Final_VoiceoverPlayback" to="Final_VoiceoverTriggerArea" method="_on_final_voiceover_playback_finished"]

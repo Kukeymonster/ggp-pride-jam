@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://c1okglu7lv5q5"
-path="res://.godot/imported/Triple-Q_The_Only_Japanese_Goblin_I_Know_For_Real.mp3-0c950ae64060cab54691de1d5dc9a3a2.mp3str"
+path="res://.godot/imported/Triple-Q_The_Only_Japanese_Goblin_I_Know_For_Real.mp3-93451cddc498b98e7fdbb53c4c0802c5.mp3str"
 
 [deps]
 
-source_file="res://Sound/Triple-Q_The_Only_Japanese_Goblin_I_Know_For_Real.mp3"
-dest_files=["res://.godot/imported/Triple-Q_The_Only_Japanese_Goblin_I_Know_For_Real.mp3-0c950ae64060cab54691de1d5dc9a3a2.mp3str"]
+source_file="res://Sound/Placeholder/Triple-Q_The_Only_Japanese_Goblin_I_Know_For_Real.mp3"
+dest_files=["res://.godot/imported/Triple-Q_The_Only_Japanese_Goblin_I_Know_For_Real.mp3-93451cddc498b98e7fdbb53c4c0802c5.mp3str"]
 
 [params]
 

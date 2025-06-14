@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://drg03hht66das"
-path="res://.godot/imported/760371__froey__stepping_madly-CUT.wav-e2bccfe6ee8abc931d3823af4804c94c.sample"
+path="res://.godot/imported/760371__froey__stepping_madly-CUT.wav-29ee7b6d312af6346acced7345789db4.sample"
 
 [deps]
 
-source_file="res://Sound/760371__froey__stepping_madly-CUT.wav"
-dest_files=["res://.godot/imported/760371__froey__stepping_madly-CUT.wav-e2bccfe6ee8abc931d3823af4804c94c.sample"]
+source_file="res://Sound/SFX/760371__froey__stepping_madly-CUT.wav"
+dest_files=["res://.godot/imported/760371__froey__stepping_madly-CUT.wav-29ee7b6d312af6346acced7345789db4.sample"]
 
 [params]
 

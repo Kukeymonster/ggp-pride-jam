@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://lf4d78yjs6uw"]
+[gd_scene load_steps=48 format=3 uid="uid://lf4d78yjs6uw"]
 
 [ext_resource type="Texture2D" uid="uid://dmtrrjrr2buke" path="res://Art/TEXTURES/dirt1.png" id="1_46yxy"]
 [ext_resource type="Texture2D" uid="uid://bh78doav21rai" path="res://Art/TEXTURES/fence1_a.png" id="2_5xglg"]
@@ -7,11 +7,16 @@
 [ext_resource type="PackedScene" uid="uid://d1lwsgacd5kmx" path="res://Art/Prefabs/JumpGroup.tscn" id="5_dcs6k"]
 [ext_resource type="Script" uid="uid://k17q7qw1d3u3" path="res://Scripts/Audio/voiceover_trigger_area.gd" id="5_pyuds"]
 [ext_resource type="PackedScene" uid="uid://wcnlpclb8po7" path="res://Scenes/Character/Player.tscn" id="6_pyuds"]
-[ext_resource type="AudioStream" uid="uid://c1okglu7lv5q5" path="res://Sound/Triple-Q_The_Only_Japanese_Goblin_I_Know_For_Real.mp3" id="6_y0vb5"]
 [ext_resource type="Texture2D" uid="uid://dryl5vjwhicds" path="res://Art/POSTER.png" id="7_7re1q"]
+[ext_resource type="AudioStream" uid="uid://b8ysl54oe7np" path="res://Sound/Voiceover/VoiceLine_Ex1.wav" id="7_wxuhy"]
 [ext_resource type="Texture2D" uid="uid://b1liv8ue7jkgk" path="res://Art/BOOTS.png" id="8_lboh2"]
+[ext_resource type="AudioStream" uid="uid://dt6tth7r5snuo" path="res://Sound/Voiceover/VoiceLine_Ex2.wav" id="8_mqt0h"]
 [ext_resource type="Texture2D" uid="uid://bsns52sc1ae7o" path="res://Art/MOHAWK.png" id="9_t2sxf"]
-[ext_resource type="AudioStream" uid="uid://drg03hht66das" path="res://Sound/760371__froey__stepping_madly-CUT.wav" id="12_jkatx"]
+[ext_resource type="AudioStream" uid="uid://dec1x5aqxeukx" path="res://Sound/Voiceover/VoiceLine_Ex3.wav" id="10_pkxqh"]
+[ext_resource type="AudioStream" uid="uid://drg03hht66das" path="res://Sound/SFX/760371__froey__stepping_madly-CUT.wav" id="12_jkatx"]
+[ext_resource type="AudioStream" uid="uid://d3y3dfa4yg7sf" path="res://Sound/PRock.mp3" id="15_do5u0"]
+[ext_resource type="AudioStream" uid="uid://ceo7tonukn382" path="res://Sound/Voiceover/VoiceLine_End-1.wav" id="15_riig2"]
+[ext_resource type="AudioStream" uid="uid://c2ox5ee7styos" path="res://Sound/Voiceover/VoiceLine_End-2.wav" id="17_wv7ba"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cw650"]
 albedo_color = Color(0.568973, 0.568973, 0.568973, 1)
@@ -86,6 +91,7 @@ albedo_texture = ExtResource("2_cw650")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pkxqh"]
 albedo_texture = ExtResource("2_5xglg")
+grow_amount = -10.992
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_riig2"]
 albedo_texture = ExtResource("2_46yxy")
@@ -95,6 +101,7 @@ albedo_texture = ExtResource("2_46yxy")
 uv1_scale = Vector3(2.5, 2.5, 2.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dcs6k"]
+size = Vector3(0.598755, 0.69519, 0.478455)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dsthy"]
 albedo_texture = ExtResource("2_46yxy")
@@ -651,7 +658,7 @@ spot_range = 3.137
 
 [node name="Ex1_VoiceoverTriggerArea" type="Area3D" parent="FirstExhibition/Audio_Shenanigans" node_paths=PackedStringArray("audio_stream_player")]
 script = ExtResource("5_pyuds")
-voiceover_audio = ExtResource("6_y0vb5")
+voiceover_audio = ExtResource("7_wxuhy")
 audio_stream_player = NodePath("../Ex1_VoiceoverPlayback")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="FirstExhibition/Audio_Shenanigans/Ex1_VoiceoverTriggerArea"]
@@ -718,7 +725,7 @@ spot_range = 3.137
 
 [node name="Ex2_VoiceoverTriggerArea" type="Area3D" parent="SecondExhibiton/Audio_Shenanigans" node_paths=PackedStringArray("audio_stream_player")]
 script = ExtResource("5_pyuds")
-voiceover_audio = ExtResource("6_y0vb5")
+voiceover_audio = ExtResource("8_mqt0h")
 audio_stream_player = NodePath("../Ex2_VoiceoverPlayback")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SecondExhibiton/Audio_Shenanigans/Ex2_VoiceoverTriggerArea"]
@@ -785,7 +792,7 @@ spot_range = 3.137
 
 [node name="Ex3_VoiceoverTriggerArea" type="Area3D" parent="ThirdExhibition/Audio_Shenanigans" node_paths=PackedStringArray("audio_stream_player")]
 script = ExtResource("5_pyuds")
-voiceover_audio = ExtResource("6_y0vb5")
+voiceover_audio = ExtResource("10_pkxqh")
 audio_stream_player = NodePath("../Ex3_VoiceoverPlayback")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ThirdExhibition/Audio_Shenanigans/Ex3_VoiceoverTriggerArea"]
@@ -1027,6 +1034,9 @@ max_polyphony = 2
 bus = &"SFX"
 
 [node name="MusicStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_do5u0")
+volume_db = -20.392
+autoplay = true
 bus = &"Music"
 
 [node name="InvisWall" type="CSGBox3D" parent="."]
@@ -1038,6 +1048,45 @@ size = Vector3(6.29785, 3.45752, 1)
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_t2sxf")
 
+[node name="End_VoiceoverTriggerArea" type="Area3D" parent="." node_paths=PackedStringArray("audio_stream_player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.83582, 4.76837e-07, 3.1006)
+script = ExtResource("5_pyuds")
+voiceover_audio = ExtResource("15_riig2")
+audio_stream_player = NodePath("../End_VoiceoverPlayback")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="End_VoiceoverTriggerArea"]
+transform = Transform3D(1.77082, 0, 0.929622, 0, 2, 0, -0.929622, 0, 1.77082, -0.420841, 0.893778, 0.336907)
+shape = SubResource("BoxShape3D_dcs6k")
+
+[node name="End_VoiceoverPlayback" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.83582, 4.76837e-07, 3.1006)
+stream = ExtResource("15_riig2")
+attenuation_model = 1
+unit_size = 2.0
+max_distance = 3.9
+bus = &"Voice"
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5971, 0.290288, 0.133931)
+
+[node name="Final_VoiceoverTriggerArea" type="Area3D" parent="Node3D" node_paths=PackedStringArray("audio_stream_player")]
+script = ExtResource("5_pyuds")
+voiceover_audio = ExtResource("17_wv7ba")
+audio_stream_player = NodePath("../Final_VoiceoverPlayback")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Final_VoiceoverTriggerArea"]
+transform = Transform3D(1.77082, 0, 0.929622, 0, 2, 0, -0.929622, 0, 1.77082, -0.420841, 0.893778, 0.336907)
+shape = SubResource("BoxShape3D_dcs6k")
+
+[node name="Final_VoiceoverPlayback" type="AudioStreamPlayer3D" parent="Node3D"]
+stream = ExtResource("17_wv7ba")
+attenuation_model = 1
+unit_size = 2.0
+max_distance = 3.9
+bus = &"Voice"
+
 [connection signal="body_entered" from="FirstExhibition/Audio_Shenanigans/Ex1_VoiceoverTriggerArea" to="FirstExhibition/Audio_Shenanigans/Ex1_VoiceoverTriggerArea" method="_on_body_entered"]
 [connection signal="body_entered" from="SecondExhibiton/Audio_Shenanigans/Ex2_VoiceoverTriggerArea" to="SecondExhibiton/Audio_Shenanigans/Ex2_VoiceoverTriggerArea" method="_on_body_entered"]
 [connection signal="body_entered" from="ThirdExhibition/Audio_Shenanigans/Ex3_VoiceoverTriggerArea" to="ThirdExhibition/Audio_Shenanigans/Ex3_VoiceoverTriggerArea" method="_on_body_entered"]
+[connection signal="body_entered" from="End_VoiceoverTriggerArea" to="End_VoiceoverTriggerArea" method="_on_body_entered"]
+[connection signal="body_entered" from="Node3D/Final_VoiceoverTriggerArea" to="Node3D/Final_VoiceoverTriggerArea" method="_on_body_entered"]

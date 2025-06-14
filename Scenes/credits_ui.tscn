@@ -244,6 +244,29 @@ text = "Quinn"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Label6" type="RichTextLabel" parent="CenterContainer/Control/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2_lqhbf")
+theme_override_fonts/bold_font = ExtResource("3_fkpqq")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[u] Voice Actress [/u]"
+horizontal_alignment = 1
+
+[node name="VBoxContainer6" type="VBoxContainer" parent="CenterContainer/Control/VBoxContainer"]
+layout_mode = 2
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="CenterContainer/Control/VBoxContainer/VBoxContainer6"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("4_wlkx5")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "Quinn"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="LeaveButton" type="TextureButton" parent="."]
 custom_minimum_size = Vector2(200, 60)
 layout_mode = 1
