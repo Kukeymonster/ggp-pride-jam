@@ -636,14 +636,22 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 2.3
 light_energy = 4.0
 spot_range = 3.137
 
-[node name="Ex1_VoiceoverTriggerArea" type="Area3D" parent="FirstExhibition" node_paths=PackedStringArray("audio_stream_player")]
+[node name="Audio_Shenanigans" type="Node3D" parent="FirstExhibition"]
+
+[node name="Ex1_VoiceoverTriggerArea" type="Area3D" parent="FirstExhibition/Audio_Shenanigans" node_paths=PackedStringArray("audio_stream_player")]
 script = ExtResource("5_pyuds")
 voiceover_audio = ExtResource("6_y0vb5")
-audio_stream_player = NodePath("../../VoiceoverStreamPlayer")
+audio_stream_player = NodePath("../Ex1_VoiceoverPlayback")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="FirstExhibition/Ex1_VoiceoverTriggerArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.193)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FirstExhibition/Audio_Shenanigans/Ex1_VoiceoverTriggerArea"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0.193)
 shape = SubResource("BoxShape3D_dcs6k")
+
+[node name="Ex1_VoiceoverPlayback" type="AudioStreamPlayer3D" parent="FirstExhibition/Audio_Shenanigans"]
+attenuation_model = 1
+unit_size = 2.0
+max_distance = 3.9
+bus = &"Voice"
 
 [node name="SecondExhibiton" type="Node3D" parent="."]
 transform = Transform3D(-0.0261421, 0, 0.999658, 0, 1, 0, -0.999658, 0, -0.0261421, -2.57152, 0, 4.52366)
@@ -682,6 +690,23 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 2.3
 light_energy = 4.0
 spot_range = 3.137
 
+[node name="Audio_Shenanigans" type="Node3D" parent="SecondExhibiton"]
+
+[node name="Ex2_VoiceoverTriggerArea" type="Area3D" parent="SecondExhibiton/Audio_Shenanigans" node_paths=PackedStringArray("audio_stream_player")]
+script = ExtResource("5_pyuds")
+voiceover_audio = ExtResource("6_y0vb5")
+audio_stream_player = NodePath("../Ex2_VoiceoverPlayback")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SecondExhibiton/Audio_Shenanigans/Ex2_VoiceoverTriggerArea"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0.193)
+shape = SubResource("BoxShape3D_dcs6k")
+
+[node name="Ex2_VoiceoverPlayback" type="AudioStreamPlayer3D" parent="SecondExhibiton/Audio_Shenanigans"]
+attenuation_model = 1
+unit_size = 2.0
+max_distance = 3.9
+bus = &"Voice"
+
 [node name="ThirdExhibition" type="Node3D" parent="."]
 transform = Transform3D(0.900501, 0, 0.434854, 0, 1, 0, -0.434854, 0, 0.900501, 6.35989, 0, -2.88866)
 
@@ -718,6 +743,23 @@ size = Vector3(0.135498, 1.1748, 0.196045)
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 2.3314, 0.209628)
 light_energy = 4.0
 spot_range = 3.137
+
+[node name="Audio_Shenanigans" type="Node3D" parent="ThirdExhibition"]
+
+[node name="Ex3_VoiceoverTriggerArea" type="Area3D" parent="ThirdExhibition/Audio_Shenanigans" node_paths=PackedStringArray("audio_stream_player")]
+script = ExtResource("5_pyuds")
+voiceover_audio = ExtResource("6_y0vb5")
+audio_stream_player = NodePath("../Ex3_VoiceoverPlayback")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ThirdExhibition/Audio_Shenanigans/Ex3_VoiceoverTriggerArea"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0.193)
+shape = SubResource("BoxShape3D_dcs6k")
+
+[node name="Ex3_VoiceoverPlayback" type="AudioStreamPlayer3D" parent="ThirdExhibition/Audio_Shenanigans"]
+attenuation_model = 1
+unit_size = 2.0
+max_distance = 3.9
+bus = &"Voice"
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(0.743712, -0.595377, 0.304004, 0.261745, 0.677791, 0.687087, -0.615127, -0.431424, 0.659918, 6.88494, 7.474, 14.459)
@@ -926,9 +968,6 @@ transform = Transform3D(-0.16998, 0, -0.00259606, 0, 0.17, 0, 0.00259606, 0, -0.
 [node name="Player" parent="." instance=ExtResource("6_pyuds")]
 transform = Transform3D(-2.62268e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.62268e-08, -11.8492, 0.611813, 2.49428)
 
-[node name="VoiceoverStreamPlayer" type="AudioStreamPlayer" parent="."]
-bus = &"Voice"
-
 [node name="MusicStreamPlayer" type="AudioStreamPlayer" parent="."]
 bus = &"Music"
 
@@ -938,4 +977,6 @@ material_override = SubResource("StandardMaterial3D_uhqrl")
 use_collision = true
 size = Vector3(6.29785, 3.45752, 1)
 
-[connection signal="body_entered" from="FirstExhibition/Ex1_VoiceoverTriggerArea" to="FirstExhibition/Ex1_VoiceoverTriggerArea" method="_on_body_entered"]
+[connection signal="body_entered" from="FirstExhibition/Audio_Shenanigans/Ex1_VoiceoverTriggerArea" to="FirstExhibition/Audio_Shenanigans/Ex1_VoiceoverTriggerArea" method="_on_body_entered"]
+[connection signal="body_entered" from="SecondExhibiton/Audio_Shenanigans/Ex2_VoiceoverTriggerArea" to="SecondExhibiton/Audio_Shenanigans/Ex2_VoiceoverTriggerArea" method="_on_body_entered"]
+[connection signal="body_entered" from="ThirdExhibition/Audio_Shenanigans/Ex3_VoiceoverTriggerArea" to="ThirdExhibition/Audio_Shenanigans/Ex3_VoiceoverTriggerArea" method="_on_body_entered"]

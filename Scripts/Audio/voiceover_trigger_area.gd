@@ -1,7 +1,7 @@
 extends Area3D
 
 @export var voiceover_audio: AudioStream
-@export var audio_stream_player: AudioStreamPlayer
+@export var audio_stream_player: AudioStreamPlayer3D
 
 func _on_body_entered(_body: Node3D) -> void:
 	audio_stream_player.stream = voiceover_audio
